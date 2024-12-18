@@ -1,12 +1,15 @@
+document.querySelector('.add').addEventListener('click', function() {
+    document.querySelector('.bookForm').style.display = 'block';
+});
+
+document.querySelector('.closeButton').addEventListener('click', function() {
+    document.querySelector('.bookForm').style.display = 'none';
+});
+
 const myLibrary = [
     { title: "The Hobbit", author: "J.R.R. Tolkien", pages: 310, status: "Read" },
     { title: "1984", author: "George Orwell", pages: 328, status: "Not Read" }
   ];
-
-document.getElementById("addButton").addEventListener("click", function() {
-    const form = document.getElementById("bookForm");
-    form.style.display = form.style.display === "none" ? "block" : "none"; // Toggle form visibility
-  });
 
 function Book(title,author,pages,status) {
     
@@ -27,6 +30,11 @@ function addBookToLibrary() {
 
     renderBooks();
 }
+//remove book
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    renderBooks(); // Re-render the book list
+}
 
 function renderBook(){
     const libraryDiv=document.getElementById("library");
@@ -46,5 +54,5 @@ function renderBook(){
     });
  
 }
-
+document.getElementById("bookForm").addEventListener("submit", addBookToLibrary);
 renderBook();

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="nav_bar">
+        <div class="header">  <h1>Library</h1></div>
+        <div class="addButton"> <button class="add">Add Book</button> </div>
+       
+        
+    </div>
+
+    <div class="bookForm">
+        <form>
+            <label for="name">Book Name</label>
+            <input for="text" id="name" name="name" required>
+            <label for="author" >Author</label>
+            <input for="text" id="author" name="author" required>
+            <label for="pages">Pages</label>
+            <input for="pages" id="pages" name="pages" min="1" required>
+            <div class="bookStatus">
+                <p>Did you read the book?</p>
+                <label>
+                  <input type="radio" name="readStatus" value="yes"> Yes
+                </label><br>
+                <label>
+                  <input type="radio" name="readStatus" value="no"> No
+                </label><br>
+               
+            </div>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</body>
+</html>
